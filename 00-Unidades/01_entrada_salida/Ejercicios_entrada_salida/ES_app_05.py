@@ -40,10 +40,11 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        nombre_de_la_persona = self.txt_nombre.get()
+        edad_de_la_persona = self.txt_edad.get()
+        alert("Descripción", f"Usted se llama {nombre_de_la_persona} y su edad es de {edad_de_la_persona} años")
 
-        
-    
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
