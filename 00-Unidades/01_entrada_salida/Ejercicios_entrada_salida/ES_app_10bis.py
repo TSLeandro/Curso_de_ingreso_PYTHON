@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Leandro Joaquín
+apellido: Torres Sosa
 ---
 Ejercicio: entrada_salida_10bis
 ---
@@ -37,11 +37,15 @@ class App(customtkinter.CTk):
         self.txt_descuento.grid(row=1, column=1)
 
         self.btn_mostrar = customtkinter.CTkButton(
-            master=self, text="Mostrar", command=self.btn_mostrar_on_click)
+            master=self, text="Calcular", command=self.btn_mostrar_on_click)
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        pass
+        importe = self.txt_importe.get()
+        descuento =  self.txt_descuento.get()
+        resultado = float(importe) * float(descuento) / 100
+        importe_descuento = float(importe) - float(resultado)
+        alert("Importe", f"Su importe es de {importe_descuento}")
 
 
 if __name__ == "__main__":
