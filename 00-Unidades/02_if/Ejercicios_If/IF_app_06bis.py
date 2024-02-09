@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Leandro Joaquín
+apellido: Torres Sosa
 ---
 Ejercicio: if_06bis
 ---
@@ -28,7 +28,7 @@ class App(customtkinter.CTk):
 
         self.title("UTN FRA")
 
-        self.label1 = customtkinter.CTkLabel(master=self, text="Altura")
+        self.label1 = customtkinter.CTkLabel(master=self, text="Altura (cm)")
         self.label1.grid(row=0, column=0, padx=20, pady=10)
         
         self.txt_altura = customtkinter.CTkEntry(master=self)
@@ -39,7 +39,16 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        altura = int(self.txt_altura.get())
+        if altura < 160:
+            alert("Posición", "Su posición es: Base")
+        elif altura > 159 and altura < 180:
+            alert("Posición", "Su posición es: Escolta")
+        elif altura > 179 and altura < 200:
+            alert("Posición", "Su posición es: Alero")
+        else:
+            alert("Posición", "Su posición es: Ala-Pívot o Pívot")
+
 
         
         
